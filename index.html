@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(79, 239, 250, 0.5);
+        }
+        div {
+
+            width: 600px;
+            height: 121px;
+            margin-top: 8px;
+            margin-left: 350px;
+        }
+
+        div :hover {
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        img {
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="block1()"><img id="block1" src="images/cat1.jpg" width="600px" height="120px"></div>
+    <div onclick="block2()"><img id="block2" src="images/mon2.jpg" width="600px" height="120px"></div>
+    <div onclick="block3()"><img id="block3" src="images/girl3.png" width="600px" height="120px"></div>
+    <div onclick="block4()"><img id="block4" src="images/mon4.jpg" width="600px" height="120px"></div>
+    <div onclick="block5()"><img id="block5" src="images/girl5.png" width="600px" height="120px"></div>
+</body>
+<script>
+    function block1() {
+        let img = document.getElementById('block1');
+        if (img.src == "http://127.0.0.1:5500/puzzle/images/cat1.jpg") {
+            img.src = "images/mon1.jpg";
+        } else {
+            if (img.src == "http://127.0.0.1:5500/puzzle/images/mon1.jpg") {
+                img.src = "images/girl1.png";
+            } else {
+                img.src = "images/cat1.jpg";
+            }
+        }
+        checkWinCat();
+        checkWinGirl();
+        checkWinMon();
+
+    }
+
+    function block2() {
+        let img = document.getElementById('block2');
+        if (img.src == "http://127.0.0.1:5500/puzzle/images/mon2.jpg") {
+            img.src = "images/cat2.jpg";
+        } else {
+            if (img.src == "http://127.0.0.1:5500/puzzle/images/cat2.jpg") {
+                img.src = "images/girl2.png";
+            } else {
+                img.src = "images/mon2.jpg";
+            }
+        }
+        checkWinCat();
+        checkWinGirl();
+        checkWinMon();
+
+    }
+    function block3() {
+        let img = document.getElementById('block3');
+        if (img.src == "http://127.0.0.1:5500/puzzle/images/girl3.png") {
+            img.src = "images/cat3.jpg";
+        } else {
+            if (img.src == "http://127.0.0.1:5500/puzzle/images/cat3.jpg") {
+                img.src = "images/mon3.jpg";
+            } else {
+                img.src = "images/girl3.png";
+            }
+        }
+        checkWinCat();
+        checkWinGirl();
+        checkWinMon();
+
+
+    }
+    function block4() {
+        let img = document.getElementById('block4');
+        if (img.src == "http://127.0.0.1:5500/puzzle/images/mon4.jpg") {
+            img.src = "images/cat4.jpg";
+        } else {
+            if (img.src == "http://127.0.0.1:5500/puzzle/images/cat4.jpg") {
+                img.src = "images/girl4.png";
+            } else {
+                img.src = "images/mon4.jpg";
+            }
+        }
+        checkWinCat();
+        checkWinGirl();
+        checkWinMon();
+
+
+    }
+    function block5() {
+        let img = document.getElementById('block5');
+        if (img.src == "http://127.0.0.1:5500/puzzle/images/girl5.png") {
+            img.src = "images/cat5.jpg";
+        } else {
+            if (img.src == "http://127.0.0.1:5500/puzzle/images/cat5.jpg") {
+                img.src = "images/mon5.jpg";
+            } else {
+                img.src = "images/girl5.png";
+            }
+
+        }
+        checkWinCat();
+        checkWinGirl();
+        checkWinMon();
+    }
+    function checkWinCat() {
+        let idimg1 = document.getElementById('block1').src;
+        let idimg2 = document.getElementById('block2').src;
+        let idimg3 = document.getElementById('block3').src;
+        let idimg4 = document.getElementById('block4').src;
+        let idimg5 = document.getElementById('block5').src;
+        if (idimg1 == "http://127.0.0.1:5500/puzzle/images/cat1.jpg" && idimg2
+            == "http://127.0.0.1:5500/puzzle/images/cat2.jpg" && idimg3
+            == "http://127.0.0.1:5500/puzzle/images/cat3.jpg" && idimg4
+            == "http://127.0.0.1:5500/puzzle/images/cat4.jpg" && idimg5
+            == "http://127.0.0.1:5500/puzzle/images/cat5.jpg") {
+            document.getElementsByTagName("div")[0].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[1].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[2].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[3].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[4].style.boxShadow = "10px 20px 30px #ff6ecf";
+
+        }
+    }
+    function checkWinGirl() {
+        let idimg1 = document.getElementById('block1').src;
+        let idimg2 = document.getElementById('block2').src;
+        let idimg3 = document.getElementById('block3').src;
+        let idimg4 = document.getElementById('block4').src;
+        let idimg5 = document.getElementById('block5').src;
+        if (idimg1 == "http://127.0.0.1:5500/puzzle/images/girl1.png" && idimg2
+            == "http://127.0.0.1:5500/puzzle/images/girl2.png" && idimg3
+            == "http://127.0.0.1:5500/puzzle/images/girl3.png" && idimg4
+            == "http://127.0.0.1:5500/puzzle/images/girl4.png" && idimg5
+            == "http://127.0.0.1:5500/puzzle/images/girl5.png") {
+            document.getElementsByTagName("div")[0].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[1].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[2].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[3].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[4].style.boxShadow = "10px 20px 30px #ff6ecf";
+
+        } 
+        
+    }
+    function checkWinMon() {
+        let idimg1 = document.getElementById('block1').src;
+        let idimg2 = document.getElementById('block2').src;
+        let idimg3 = document.getElementById('block3').src;
+        let idimg4 = document.getElementById('block4').src;
+        let idimg5 = document.getElementById('block5').src;
+        if (idimg1 == "http://127.0.0.1:5500/puzzle/images/mon1.jpg" && idimg2
+            == "http://127.0.0.1:5500/puzzle/images/mon2.jpg" && idimg3
+            == "http://127.0.0.1:5500/puzzle/images/mon3.jpg" && idimg4
+            == "http://127.0.0.1:5500/puzzle/images/mon4.jpg" && idimg5
+            == "http://127.0.0.1:5500/puzzle/images/mon5.jpg") {
+            document.getElementsByTagName("div")[0].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[1].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[2].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[3].style.boxShadow = "10px 20px 30px #ff6ecf";
+            document.getElementsByTagName("div")[4].style.boxShadow = "10px 20px 30px #ff6ecf";
+
+        } 
+    }
+
+
+</script>
+
+</html>
