@@ -39,10 +39,10 @@
 <script>
     function block1() {
         let img = document.getElementById('block1');
-        if (img.src == "http://127.0.0.1:5500/puzzle/images/cat1.jpg") {
-            img.src = "images/mon1.jpg";
+        if (img.src == "./images/cat1.jpg") {
+            img.src = "./images/mon1.jpg";
         } else {
-            if (img.src == "http://127.0.0.1:5500/puzzle/images/mon1.jpg") {
+            if (img.src == "./images/mon1.jpg") {
                 img.src = "images/girl1.png";
             } else {
                 img.src = "images/cat1.jpg";
